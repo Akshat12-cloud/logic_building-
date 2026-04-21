@@ -7,4 +7,4 @@ def rotate_left(arr):
     return arr
 
 arr = [1, 2, 3, 4, 5]
-print(rotate_left(arr))    
+print(rotate_left(arr))  
