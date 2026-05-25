@@ -1,28 +1,28 @@
 #Print the middle character(s) of a string. 
-#include <stdio.h>
-#include <string.h>
 
-int main() {
-    char str[100];
-    int len, mid;
+string = input("Enter a string: ")
 
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
+length = 0
 
-    // Remove newline character if present
-    str[strcspn(str, "\n")] = '\0';
+# Find length without using len()
+for ch in string:
+    length += 1
 
-    len = strlen(str);
+# Check even or odd length
+if length % 2 == 0:
+    mid1 = (length // 2) - 1
+    mid2 = length // 2
 
-    if (len % 2 == 0) {
-        // Even length → print two middle characters
-        mid = len / 2;
-        printf("Middle characters: %c%c\n", str[mid - 1], str[mid]);
-    } else {
-        // Odd length → print one middle character
-        mid = len / 2;
-        printf("Middle character: %c\n", str[mid]);
-    }
+    index = 0
+    for ch in string:
+        if index == mid1 or index == mid2:
+            print(ch, end="")
+        index += 1
+else:
+    mid = length // 2
 
-    return 0;
-}
+    index = 0
+    for ch in string:
+        if index == mid:
+            print(ch)
+        index += 1
